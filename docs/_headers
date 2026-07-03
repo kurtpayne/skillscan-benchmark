@@ -1,0 +1,3 @@
+# always revalidate — never serve stale HTML from cache
+/*
+  Cache-Control: no-cache, max-age=0, must-revalidate

@@ -1,0 +1,152 @@
+{
+  "gpt-4o": {
+    "malicious_organic": {
+      "n": 193,
+      "malicious": 164,
+      "benign": 29,
+      "refused": 0,
+      "error": 0
+    },
+    "malicious_synth": {
+      "n": 225,
+      "malicious": 191,
+      "benign": 34,
+      "refused": 0,
+      "error": 0
+    },
+    "benign": {
+      "n": 300,
+      "malicious": 5,
+      "benign": 295,
+      "refused": 0,
+      "error": 0
+    },
+    "dual_use": {
+      "n": 300,
+      "malicious": 16,
+      "benign": 284,
+      "refused": 0,
+      "error": 0
+    }
+  },
+  "gpt-4o-mini": {
+    "malicious_organic": {
+      "n": 193,
+      "malicious": 163,
+      "benign": 30,
+      "refused": 0,
+      "error": 0
+    },
+    "malicious_synth": {
+      "n": 225,
+      "malicious": 145,
+      "benign": 80,
+      "refused": 0,
+      "error": 0
+    },
+    "benign": {
+      "n": 300,
+      "malicious": 5,
+      "benign": 295,
+      "refused": 0,
+      "error": 0
+    },
+    "dual_use": {
+      "n": 300,
+      "malicious": 14,
+      "benign": 286,
+      "refused": 0,
+      "error": 0
+    }
+  },
+  "claude-sonnet-4.6": {
+    "malicious_organic": {
+      "n": 193,
+      "malicious": 124,
+      "benign": 69,
+      "refused": 0,
+      "error": 0
+    },
+    "malicious_synth": {
+      "n": 225,
+      "malicious": 208,
+      "benign": 7,
+      "refused": 10,
+      "error": 0
+    },
+    "benign": {
+      "n": 300,
+      "malicious": 1,
+      "benign": 298,
+      "refused": 1,
+      "error": 0
+    },
+    "dual_use": {
+      "n": 300,
+      "malicious": 6,
+      "benign": 289,
+      "refused": 5,
+      "error": 0
+    }
+  },
+  "claude-haiku-4.5": {
+    "malicious_organic": {
+      "n": 193,
+      "malicious": 155,
+      "benign": 38,
+      "refused": 0,
+      "error": 0
+    },
+    "malicious_synth": {
+      "n": 225,
+      "malicious": 209,
+      "benign": 16,
+      "refused": 0,
+      "error": 0
+    },
+    "benign": {
+      "n": 300,
+      "malicious": 1,
+      "benign": 299,
+      "refused": 0,
+      "error": 0
+    },
+    "dual_use": {
+      "n": 300,
+      "malicious": 6,
+      "benign": 290,
+      "refused": 4,
+      "error": 0
+    }
+  },
+  "claude-opus-4.8": {
+    "malicious_organic": {
+      "n": 193,
+      "malicious": 82,
+      "benign": 107,
+      "refused": 4,
+      "error": 0
+    },
+    "malicious_synth": {
+      "n": 225,
+      "malicious": 185,
+      "benign": 20,
+      "refused": 20,
+      "error": 0
+    },
+    "benign": {
+      "n": 300,
+      "malicious": 11,
+      "benign": 282,
+      "refused": 7,
+      "error": 0
+    },
+    "dual_use": {
+      "n": 300,
+      "malicious": 42,
+      "benign": 222,
+      "refused": 36,
+      "error": 0
+    }
+  }
+}

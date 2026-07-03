@@ -1,0 +1,44 @@
+{
+ "scanner": "skillgate",
+ "version": "c0324161",
+ "graded_profile": "preinstall (scenario-matched; check --policy \u2192 blocked)",
+ "independent_recall": {
+  "k": 82,
+  "n": 84,
+  "point": 0.9762,
+  "lo": 0.9173,
+  "hi": 0.9934,
+  "note": "profile-stable (same under audit); catches blatant published injections"
+ },
+ "full_corpus_preinstall": {
+  "recall": [
+   443,
+   507
+  ],
+  "fp_benign": [
+   116,
+   120
+  ],
+  "fp_dual_use": [
+   292,
+   297
+  ],
+  "balanced_acc": 0.448
+ },
+ "full_corpus_audit": {
+  "recall": [
+   157,
+   507
+  ],
+  "fp_benign": [
+   49,
+   120
+  ],
+  "fp_dual_use": [
+   202,
+   297
+  ],
+  "balanced_acc": 0.354
+ },
+ "note": "Over-blocker at both profiles tested. preinstall/strict block ~everything (FP ~97% benign / 98% dual-use); audit more lenient but misses most novel (31% recall) and still over-blocks (41% benign / 68% dual-use FP). Neither tested profile is a usable discriminator. Run offline (docker --network none / Fly Firecracker)."
+}

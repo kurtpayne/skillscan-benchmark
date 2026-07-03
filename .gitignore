@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.cache/
+cache.json
+_staging/
+leaderboard.json
+_internal/
+_repro/
+skillgate.*.yaml

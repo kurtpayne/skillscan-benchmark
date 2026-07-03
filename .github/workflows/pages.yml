@@ -1,0 +1,43 @@
+name: deploy-pages
+# Rebuild the static scoreboard site from board_v1.json and publish to GitHub Pages.
+# (Pages serves on the free plan only for PUBLIC repos — activates when the repo is flipped
+#  public at launch; the domain is pointed then.)
+on:
+  # PRE-LAUNCH PREVIEW PHASE: the repo is private and the site is served from Cloudflare Pages
+  # (unguessable URL, noindex) via `ops/deploy_preview.sh` — GitHub Pages can't serve a private free
+  # repo, so the push auto-deploy is disabled here. RE-ENABLE AT LAUNCH (flip repo public + restore
+  # `push: branches:[main]`). Manual trigger kept for when the repo is public again.
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build site
+        run: python3 scripts/build_site.py --board board_v1.json
+        env:
+          # Launch builds are public: indexable robots + OG cards, no DRAFT banner.
+          # Without this the CI rebuild would silently regress the site to preview mode.
+          SCOREBOARD_PUBLIC: "1"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4

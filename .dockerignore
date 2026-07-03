@@ -1,0 +1,11 @@
+.git
+_staging/
+docs/
+board_*.json
+frontier_baselines.json
+_internal/docs/
+_internal/design/
+**/__pycache__/
+**/*.pyc
+.venv/
+example_corpus/

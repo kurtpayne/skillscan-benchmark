@@ -1,0 +1,257 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="description" content="Independent benchmark of AI-skill security scanners: static rules and one-shot LLM review, measured on attacks we didn&#x27;t author. Capability is the price."><meta property="og:type" content="website"><meta property="og:title" content="skillscan.sh — About"><meta property="og:description" content="Independent benchmark of AI-skill security scanners: static rules and one-shot LLM review, measured on attacks we didn&#x27;t author. Capability is the price."><meta property="og:url" content="https://skillscan.sh/about.html"><meta property="og:site_name" content="skillscan.sh"><meta name="twitter:card" content="summary"><title>skillscan.sh — About</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --bg:#0a0d12; --panel:#10141b; --panel2:#0d1118; --line:#1f2530; --line2:#2c3340;
+  --row:#161b24; --rowline:#161b24;
+  --ink:#e9eef6; --body:#c2cad7; --muted:#8b92a0; --faint:#7a8290; --dim:#9aa3b2; --soft:#cdd5e2;
+  --pos:#3ddc84; --pos2:#2f8a57; --neg:#e0a458; --red:#e0545b; --accent:#6ea8fe; --ctrl:#8a92a6; --auth:#b888d8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--body);
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,28px)}
+::selection{background:var(--pos);color:#06120b}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+a{color:var(--pos);text-decoration:none} a:hover{text-decoration:underline}
+h1{color:var(--ink);font-weight:700;font-size:clamp(27px,4.4vw,40px);line-height:1.16;letter-spacing:-0.015em;margin:24px 0 14px;text-wrap:balance}
+h2{color:var(--ink);font-weight:600;font-size:clamp(20px,2.8vw,25px);margin:6px 0 8px;letter-spacing:-0.01em}
+h3{color:var(--ink);font-weight:600;font-size:17px;margin:1.2em 0 .4em}
+p{margin:.6em 0;line-height:1.6}
+strong{color:var(--ink)}
+.muted{color:var(--dim)}
+.ciw{color:var(--muted);font-size:11px;font-family:'IBM Plex Mono',monospace}
+.val{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+
+/* header / footer */
+header.site{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;border-bottom:1px solid var(--line);padding-bottom:14px}
+header.site .brand{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:600;color:var(--ink);letter-spacing:.01em}
+header.site .brand .dot{color:var(--pos)}
+header.site .stamp{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+header.site nav{margin-left:auto;display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+header.site nav a{color:var(--muted)} header.site nav a.on{color:var(--ink)}
+footer.site{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;font-size:11.5px;color:var(--faint);line-height:1.6}
+footer.site p{margin:0 0 8px} footer.site strong{color:var(--dim)}
+
+/* draft banner + standfirst */
+.draftbar{display:flex;gap:10px;align-items:flex-start;background:#1a1210;border:1px solid #4a2a26;border-radius:8px;padding:10px 13px;margin:16px 0;font-size:12.5px;color:#e6b8a8;line-height:1.5}
+.draftbar .b{font-family:'IBM Plex Mono',monospace;color:var(--red);font-weight:600;flex:none}
+.draftbar strong{color:#f0c9bc}
+.wayfind{display:flex;gap:10px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:10px 13px;margin:16px 0;font-size:12.5px;color:var(--dim);line-height:1.55}
+.wayfind .i{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-weight:600;flex:none}
+.wayfind strong{color:var(--soft)} .wayfind a{color:var(--accent)}
+.standfirst{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--pos);border-radius:8px;padding:15px 17px;margin:18px 0;color:#dbe2ec;font-size:15px;line-height:1.6}
+.standfirst .who{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* hero */
+.lede{font-size:clamp(16px,2.2vw,19px);color:var(--body);line-height:1.55;margin:0 0 4px}
+.thesis{font-family:'IBM Plex Mono',monospace;font-size:clamp(15px,2vw,18px);color:var(--pos);font-weight:600;margin:14px 0 2px;letter-spacing:-0.01em}
+
+/* stat cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:26px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:16px}
+.card.s{border-top:2px solid var(--neg)} .card.i,.card.l{border-top:2px solid var(--pos)}
+.card .n{font-family:'IBM Plex Mono',monospace;font-size:clamp(26px,4vw,32px);font-weight:600;letter-spacing:-0.02em}
+.card.s .n{color:var(--neg)} .card.i .n,.card.l .n{color:var(--pos)}
+.card .t{font-size:12.5px;color:var(--dim);margin-top:7px;line-height:1.45}
+
+/* section dividers */
+.sec{display:flex;align-items:center;gap:12px;margin:48px 0 4px}
+.sec .k{font-family:'IBM Plex Mono',monospace;color:var(--pos);font-size:12px;font-weight:600;letter-spacing:.12em}
+.sec .l{flex:1;height:1px;background:var(--line)}
+.lead{font-size:14.5px;color:#aab2c0;line-height:1.6;margin:0 0 6px}
+.note{font-size:12.5px;color:var(--muted);line-height:1.55;margin:10px 0 0}
+code{font-family:'IBM Plex Mono',monospace;background:var(--row);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12.5px;color:var(--soft)}
+
+/* ladder */
+.ladmeta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin:14px 0 8px}
+.ladder{position:relative;display:flex;flex-direction:column;gap:13px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:clamp(16px,2.5vw,22px)}
+.lad-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:nowrap}
+.lad-name{font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--ink);flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lad-name .c{color:var(--muted);font-size:11px}
+.lad-val{font-family:'IBM Plex Mono',monospace;flex:none;white-space:nowrap}
+.lad-val .v{font-size:15px;font-weight:600} .lad-val .ci{font-size:11px;color:var(--muted)}
+.lad-track{position:relative;height:clamp(11px,1.6vw,15px);background:var(--row);border-radius:4px;overflow:hidden}
+.lad-fill{position:absolute;inset:0 auto 0 0;border-radius:4px}
+.lad-ceil{position:absolute;top:0;bottom:0;left:81%;width:1px;border-left:1px dashed #4a5468}
+
+/* filter chips */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:16px 0 12px}
+.filters .lbl{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted)}
+.filters .hint{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);margin-left:auto}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;border-radius:7px;padding:5px 11px;background:var(--panel);color:var(--ink)}
+.chip[data-c=static]{border:1px solid var(--neg)} .chip[data-c=llm-product]{border:1px solid var(--accent)}
+.chip[data-c=llm-control]{border:1px solid var(--pos)} .chip[data-c=author-ref]{border:1px solid var(--auth)}
+.chip.off{border-color:var(--line2)!important;color:var(--faint);opacity:.5}
+
+/* master table (desktop bar-rows) */
+#m-desk{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+#m-cards{display:none}
+table.master{border-collapse:collapse;width:100%;min-width:640px;font-size:13px}
+table.master thead tr{background:#151a23}
+table.master th{text-align:left;padding:10px 12px;color:var(--soft);font-weight:600;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--line);white-space:nowrap}
+table.master th:first-child{color:var(--ink)}
+table.master th.sortable{cursor:pointer;user-select:none} table.master th.r{text-align:right}
+table.master th.sortable:after{content:" \21C5";color:var(--muted)}
+table.master tbody tr{border-bottom:1px solid var(--rowline)}
+table.master td{padding:10px 12px;vertical-align:top}
+table.master td.lead{border-left:2px solid var(--accent)}
+.m-name{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);line-height:1.3}
+.m-sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:3px}
+.cellrow{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.cellrow:last-of-type{margin-bottom:0}
+.minibar{flex:1;height:6px;background:var(--row);border-radius:3px;overflow:hidden;min-width:48px}
+.minibar i{display:block;height:100%;border-radius:3px}
+.cellv{font-family:'IBM Plex Mono',monospace;font-size:12px;width:30px;text-align:right}
+.celln{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);margin-top:3px}
+.m-wild{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);white-space:nowrap}
+.m-bal{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600}
+table.master tr.dim td.lead, #m-cards .mcard.dim{opacity:.66}
+@media(max-width:780px){#m-desk{display:none!important} #m-cards{display:flex!important;flex-direction:column;gap:10px}}
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px}
+.mcard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mcard .balbig{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;line-height:1}
+.mcard .ballbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--faint);letter-spacing:.05em}
+.mcard .bars{margin-top:11px;display:flex;flex-direction:column;gap:7px}
+.mcard .mbar{display:flex;align-items:center;gap:9px}
+.mcard .mbar .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);width:48px;flex:none}
+.mcard .mbar .track{flex:1;height:7px;background:var(--row);border-radius:4px;overflow:hidden}
+.mcard .mbar .track i{display:block;height:100%;border-radius:4px}
+.mcard .mbar .v{font-family:'IBM Plex Mono',monospace;font-size:12px;width:60px;text-align:right}
+.mcard .foot{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);margin-top:9px}
+
+/* scatter */
+.scatterbox{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:clamp(10px,2vw,16px)}
+svg.scatter{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;vertical-align:middle;margin-right:5px}
+
+/* details */
+details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin:10px 0;padding:0 15px}
+details#mine{border-left:3px solid var(--auth)}
+details>summary{cursor:pointer;padding:13px 0;color:var(--ink);font-weight:600;font-size:15px;list-style:none;font-family:'IBM Plex Mono',monospace}
+details>summary::-webkit-details-marker{display:none}
+details>summary:before{content:"\25B8  "} details[open]>summary:before{content:"\25BE  "}
+details[open]{padding-bottom:14px}
+details p{font-size:13px;color:var(--dim);line-height:1.6}
+details p strong, details strong{color:var(--soft)}
+
+/* gen-gap rows */
+.gaphdr{display:flex;align-items:center;gap:10px;padding:0 11px 5px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+.gaprows{display:flex;flex-direction:column;gap:7px;min-width:440px}
+.gaprow{display:grid;grid-template-columns:minmax(0,1fr) 96px 50px 100px;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--rowline);border-radius:7px;padding:9px 11px}
+.gaprow .sc{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink)}
+.gaprow .ar{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
+.gaprow .kn{display:flex;align-items:center;justify-content:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px}
+.gaprow .gp{font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-align:right}
+.gaprow .vd{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:3px 0;border-radius:6px;text-align:center}
+
+/* access table */
+.access{display:flex;flex-direction:column;gap:6px}
+.access .a{display:flex;gap:10px;align-items:flex-start;background:var(--panel2);border:1px solid var(--rowline);border-radius:7px;padding:9px 11px}
+.access .a.dim{opacity:.66}
+.access .tool{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink);flex:0 0 150px}
+.access .badge{font-family:'IBM Plex Mono',monospace;font-size:10.5px;padding:2px 7px;border-radius:6px;flex:none;align-self:flex-start}
+.access .why{font-size:11.5px;color:var(--dim);line-height:1.45;flex:1 1 160px}
+
+/* generic data table (independent ladder fallback + doc tables) */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+table.data{border-collapse:collapse;width:100%;font-size:13px}
+table.data th,table.data td{border:1px solid var(--line);padding:8px 11px;text-align:left}
+table.data th{background:#151a23;color:var(--ink);font-weight:600;font-size:11.5px;letter-spacing:.03em}
+table.data tr.band-control td{background:var(--panel2);color:var(--dim)}
+table.data tr.band-win td{background:#10231a;color:var(--ink);font-weight:600}
+
+/* doc pages */
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:12px 0}
+pre code{background:none;border:none;padding:0;font-size:12.5px;line-height:1.5;white-space:pre;color:var(--ink)}
+.doc .wrap{max-width:880px}
+.doc p{font-size:15.5px;line-height:1.78;margin:0 0 1.1em;color:var(--soft);max-width:74ch}
+.doc table.data td,.doc table.data th{white-space:normal}
+.doc ul,.doc ol{margin:.6em 0 1em 1.3em;max-width:74ch} .doc li{margin:.42em 0;line-height:1.7;font-size:15px;color:var(--soft)}
+.doc blockquote{border-left:3px solid var(--line2);margin:1em 0;padding:.5em 0 .5em 14px;color:var(--dim);max-width:74ch}
+.doc h2{font-size:22px;margin:1.9em 0 .55em;padding-top:.7em;border-top:1px solid var(--line);scroll-margin-top:14px}
+.doc h3{font-size:16px;margin:1.6em 0 .4em;color:var(--ink);scroll-margin-top:14px}
+.doc h2 .num{color:var(--pos);font-family:'IBM Plex Mono',monospace;font-size:15px;margin-right:8px}
+.toc{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:20px 0 8px;max-width:74ch}
+.toc .tl{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+.toc li{margin:.32em 0;font-size:13.5px;line-height:1.5;break-inside:avoid}
+.toc a{color:var(--dim)} .toc a:hover{color:var(--pos)}
+.toc .tn{font-family:'IBM Plex Mono',monospace;color:var(--muted);margin-right:7px}
+@media(max-width:620px){.toc ol{columns:1}}
+.resp{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 17px;margin:14px 0}
+.resp-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.resp-vendor{color:var(--ink);font-weight:600}
+.resp-kind{font-size:10.5px;padding:2px 8px;border-radius:6px}
+.resp-kind.k-resp{background:#10231a;color:var(--pos)} .resp-kind.k-corr{background:#1a1210;color:var(--neg)}
+.resp-date{color:var(--muted);margin-left:auto}
+.resp-body{color:var(--soft);font-size:14.5px;line-height:1.7}
+.resp-empty{color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:1.4em 0}
+</style></head><body class=doc><div class=wrap><header class="site"><div class="brand">skillscan<span class="dot">.sh</span></div><div class="stamp">independent · board as of 2026-06-17 · corpus v1.1</div><nav><a href="index.html">scoreboard</a><a href="methodology.html">methodology</a><a href="reproduce.html">reproduce</a><a href="about.html" class=on>about</a><a href="responses.html">responses</a><a href="notices.html">notices</a></nav></header><h1 id="about-why-this-exists">About — why this exists</h1>
+<p>I set out to answer a narrow, practical question: <strong>how far can you get detecting malicious AI-agent skills <em>cheaply</em> — without shipping the skill off to a commercial API (privacy / third-party disclosure), without burning tokens, and without needing a GPU?</strong> If a defender could catch bad skills with local, free, static analysis, that&#x27;s the answer everyone wants.</p>
+<p>So I built the whole local stack — free and open-source, to answer the question, never to sell — a detection-rule engine, a fine-tuned small local classifier, intel databases, a daily threat-research cadence — and then measured it honestly. The answer was uncomfortable, and it&#x27;s the opposite of what I hoped: <strong>the cheap, local, private approach doesn&#x27;t work — and the only thing that <em>does</em> is the exact expensive option the question was trying to avoid.</strong> Measured on attacks I did <strong>not</strong> write, static rules are unusable either way — they miss most of it (13–32% recall for the signature scanners) or, in the one case that fires, block almost everything (a free static tool hits 98% recall at a 97% false-positive rate). The cheap small models barely beat the signature scanners. A <em>flagship</em> frontier model reading the skill catches <strong>81%</strong> at a low false-positive rate (recall measured on the independent set; the false-positive rate on our in-house benign set, since the independent set ships no benign cases) — but that means GPUs or a commercial API, burned tokens, and shipping your files to a company. Detection is real. <strong>Capability is the price</strong>, and it&#x27;s sold by the token.</p>
+<p>The scanner I built was <strong>free and open-source — never a product, never for sale.</strong> It didn&#x27;t clear the bar, so I retired it. This scoreboard is what I built instead.</p>
+<h2 id="where-the-static-rule-road-runs-out">Where the static-rule road runs out</h2>
+<p><strong>It barely sees novel attacks.</strong> A signature only fires on behavior it already has a pattern for. Disguised or never-before-seen skills sail through — static scanners, including the ones big vendors ship, catch single digits to low double digits on disguised malicious skills. Not because they&#x27;re badly built; because pattern-matching can&#x27;t read <em>intent</em>.</p>
+<p><strong>It punishes legitimate-but-scary skills.</strong> The flip side of &quot;match risky-looking patterns&quot; is firing on dual-use ones — a real auth tool that reads a token and calls an API looks a lot like exfiltration to a rule. So you pay in false-positives on exactly the legitimate skills people actually run.</p>
+<p><strong>And the thing that <em>works</em> isn&#x27;t cheap, local, or private.</strong> Having a model read the skill beats static rules — but &quot;use an LLM&quot; is not advice until you say <em>which</em> one. On an independent benchmark I didn&#x27;t author, the same 84 attacks score <strong>23% to 81%</strong> depending on the model: cheap/small models (gpt-4o-mini 23%, claude-haiku 26%) barely beat static, mid-tier gpt-4o hits 38%, and only the flagship (claude-sonnet 81%, opus ties it in the headline run) actually clears bar. (The models score higher on my <em>own</em> corpus — dramatically so for the cheap ones, which is the tell — because an LLM recognizes LLM-written test cases, and I helped write that corpus with these models, so I don&#x27;t headline it; the independent numbers are the honest ones.)</p>
+<p>Detection quality climbs with model capability, then plateaus — and there&#x27;s no cheap / local / private way to buy that capability: managed gateways block the requests as &quot;prompt injection,&quot; self-hosting hits structured-output and throughput limits, and the direct frontier APIs that work mean feeding malware to a commercial account. The accuracy and the cost are the same coin — which is the whole point, and the part that &quot;just use an LLM&quot; advice usually leaves out.</p>
+<p>So I stopped — not to ship a better scanner, but because I won&#x27;t keep a project that objectively doesn&#x27;t work. And I&#x27;d come to suspect the approach itself is the mismatch: this is <strong>antivirus tactics — signatures, IOC matching, pattern-scanning — pointed at what are really <em>knowledge documents</em>,</strong> natural-language instructions whose harm depends on intent and context, not a matchable pattern. You can&#x27;t virus-scan a sentence for bad intent. So I measured the field instead.</p>
+<h2 id="what-this-is">What this is</h2>
+<p>An independent scoreboard that grades AI-skill security <strong>scanners</strong> — not skills, and not a certification. I have <strong>nothing to sell</strong>: the scanner I built was free and open-source (never a product), now retired — so there&#x27;s no tool to push and no vendor to protect. <strong>Disclosure:</strong> I still maintain some open-source skill tooling under <code>skillscan-*</code> (now retired); none of my own tools are graded against the products here.</p>
+<p><strong>Full disclosure on the <em>who</em>:</strong> I&#x27;m not a security researcher — I&#x27;m a curious software engineer. I saw a gap in how much trust we hand an agent the moment we install a skill; it happened to be security-shaped, so I built something, measured it, and followed the result. The turn at the end — that this is a <em>trust</em> problem, not a <em>detection</em> one — is just what falls out of measuring it honestly.</p>
+<p><strong>Scope:</strong> this measures <strong>read-time</strong> detection — static rules and one-shot LLM reads of a skill <em>before</em> it runs. <strong>Dynamic runtime analysis</strong> (sandboxing, syscall/eBPF monitoring) is a different, complementary category and deliberately out of scope; &quot;static vs. LLM reading&quot; is the read-time comparison, not a claim that read-time is the only way to catch a bad skill.</p>
+<ul>
+<li><strong>Corpus private</strong> (so nobody can train to the test); <strong>method, code, and aggregate results public</strong>; anyone can reproduce the pipeline on their own data (see Reproduce).</li>
+<li>Pre-specified-then-frozen method, reviewed before publishing.</li>
+<li>Numbers are <strong>directional</strong> — the real-wild sample set is small and we say so loudly.</li>
+</ul>
+<h2 id="what-the-data-says">What the data says</h2>
+<p>The field is filling with skill scanners making strong claims. Held to a measured, reviewed test, the shape is clear and a little uncomfortable: <strong>the approach most of them ship — static rules — can&#x27;t find novel attacks and false-positives on legitimate ones; and the approach that <em>works</em> (a top frontier model reading the skill) only works at the top of the model-cost ladder — cheap and local variants fail, and the one that clears 80% runs only if you pay in tokens, GPUs, and shipping content to a commercial API.</strong> Detection is achievable; you just can&#x27;t get it cheaply, locally, or privately. Others are walking the same road I did. The numbers here are what they find at the end of it.</p>
+<p>This isn&#x27;t &quot;give up&quot; — it&#x27;s &quot;stop looking here.&quot; The one thing that works isn&#x27;t a control you can <em>own</em>: you transmit every skill to a third-party commercial API, pay per scan forever, depend on a model that can be deprecated or repriced, get verdicts whose reproducibility the provider controls, and can&#x27;t independently own, pin, or audit it the way you could a local artifact.</p>
+<p>The ceiling isn&#x27;t an implementation bug — it follows from the information available at read time: a scanner sees text and code, not future intent, runtime context, network behavior, or credential use, so it can&#x27;t reliably tell a benignly-used capability from a maliciously-used one.</p>
+<p>So read-time review should be a <strong>linting and triage layer, not the security boundary</strong>. The boundary needs to move closer to execution — capability isolation, runtime permissioning, provenance / signed identity, behavioral monitoring, constrained tool APIs. That&#x27;s a direction the data motivates, not a finding this board measures — but it&#x27;s where I&#x27;d look next.</p>
+<p>Built solo and independent. Spot a factual or method error? Corrections welcome from anyone.</p><footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script>
+document.addEventListener('DOMContentLoaded',function(){
+  // ---- master table: sort (desktop rows + mobile cards in lockstep) ----
+  var deskBody=document.querySelector('#m-desk tbody');
+  var cardWrap=document.querySelector('#m-cards');
+  var sortState={key:null,dir:-1};
+  function reorder(key){
+    if(sortState.key===key){sortState.dir=-sortState.dir;}else{sortState.key=key;sortState.dir=-1;}
+    var dir=sortState.dir;
+    function val(el){var v=parseFloat(el.getAttribute('data-'+key));return isNaN(v)?-1:v;}
+    if(deskBody){
+      Array.from(deskBody.querySelectorAll('tr'))
+        .sort(function(a,b){return (val(a)-val(b))*dir;})
+        .forEach(function(r){deskBody.appendChild(r);});
+    }
+    if(cardWrap){
+      Array.from(cardWrap.querySelectorAll('.mcard'))
+        .sort(function(a,b){return (val(a)-val(b))*dir;})
+        .forEach(function(r){cardWrap.appendChild(r);});
+    }
+    document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
+      th.classList.toggle('active', th.dataset.sort===key);
+    });
+  }
+  document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
+    th.addEventListener('click',function(){reorder(th.dataset.sort);});
+  });
+  // ---- class filter chips (hide/show rows + cards) ----
+  var active={};
+  document.querySelectorAll('.chip[data-c]').forEach(function(c){active[c.dataset.c]=true;});
+  function applyFilter(){
+    document.querySelectorAll('#m-desk tbody tr, #m-cards .mcard').forEach(function(el){
+      el.style.display = active[el.dataset.cls]===false ? 'none' : '';
+    });
+  }
+  document.querySelectorAll('.chip[data-c]').forEach(function(c){
+    c.addEventListener('click',function(){
+      active[c.dataset.c]=!active[c.dataset.c];
+      c.classList.toggle('off',!active[c.dataset.c]);
+      applyFilter();
+    });
+  });
+});
+</script></body></html>

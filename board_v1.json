@@ -1,0 +1,1751 @@
+{
+  "scanners": [
+    "cisco-skill-scanner",
+    "llm-baseline",
+    "llm-baseline-disjoint",
+    "skillspector",
+    "snyk-agent-scan"
+  ],
+  "modes": [
+    "static"
+  ],
+  "corpus": {
+    "n": 918,
+    "by_provenance": {
+      "synthetic_novel": 225,
+      "wild_verbatim": 425,
+      "organic_authored": 193,
+      "synthetic_benign": 75
+    },
+    "by_provenance_malicious": {
+      "synthetic_novel": 225,
+      "wild_verbatim": 5,
+      "organic_authored": 193
+    },
+    "by_provenance_benign": {
+      "wild_verbatim": 420,
+      "synthetic_benign": 75
+    },
+    "by_archetype": {
+      "code_execution": 184,
+      "data_exfiltration": 138,
+      "agent_hijacking": 101
+    },
+    "wild_malicious_by_archetype": {
+      "code_execution": 5
+    }
+  },
+  "recall": {
+    "snyk-agent-scan": {
+      "static": {
+        "code_execution": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.88,
+              "lo": 0.7874,
+              "hi": 0.9356,
+              "k": 66,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "wild_verbatim": {
+            "wilson": {
+              "point": 0.6,
+              "lo": 0.2307,
+              "hi": 0.8824,
+              "k": 3,
+              "n": 5
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.7308,
+              "lo": 0.6384,
+              "hi": 0.8067,
+              "k": 76,
+              "n": 104
+            },
+            "refusal": 0.0
+          }
+        },
+        "data_exfiltration": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.84,
+              "lo": 0.7408,
+              "hi": 0.906,
+              "k": 63,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.6984,
+              "lo": 0.5764,
+              "hi": 0.7976,
+              "k": 44,
+              "n": 63
+            },
+            "refusal": 0.0
+          }
+        },
+        "agent_hijacking": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.72,
+              "lo": 0.6096,
+              "hi": 0.809,
+              "k": 54,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.7308,
+              "lo": 0.5392,
+              "hi": 0.863,
+              "k": 19,
+              "n": 26
+            },
+            "refusal": 0.0
+          }
+        }
+      }
+    },
+    "cisco-skill-scanner": {
+      "static": {
+        "code_execution": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.1493,
+              "lo": 0.0831,
+              "hi": 0.2534,
+              "k": 10,
+              "n": 67
+            },
+            "refusal": 0.1067
+          },
+          "wild_verbatim": {
+            "wilson": {
+              "point": 0.25,
+              "lo": 0.0456,
+              "hi": 0.6994,
+              "k": 1,
+              "n": 4
+            },
+            "refusal": 0.2
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.0388,
+              "lo": 0.0152,
+              "hi": 0.0956,
+              "k": 4,
+              "n": 103
+            },
+            "refusal": 0.0096
+          }
+        },
+        "data_exfiltration": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.0,
+              "lo": 0.0,
+              "hi": 0.055,
+              "k": 0,
+              "n": 66
+            },
+            "refusal": 0.12
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.0476,
+              "lo": 0.0163,
+              "hi": 0.1309,
+              "k": 3,
+              "n": 63
+            },
+            "refusal": 0.0
+          }
+        },
+        "agent_hijacking": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.0,
+              "lo": 0.0,
+              "hi": 0.0566,
+              "k": 0,
+              "n": 64
+            },
+            "refusal": 0.1467
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.16,
+              "lo": 0.064,
+              "hi": 0.3465,
+              "k": 4,
+              "n": 25
+            },
+            "refusal": 0.0385
+          }
+        }
+      }
+    },
+    "skillspector": {
+      "static": {
+        "code_execution": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.08,
+              "lo": 0.0372,
+              "hi": 0.1637,
+              "k": 6,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "wild_verbatim": {
+            "wilson": {
+              "point": 0.4,
+              "lo": 0.1176,
+              "hi": 0.7693,
+              "k": 2,
+              "n": 5
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.0481,
+              "lo": 0.0207,
+              "hi": 0.1076,
+              "k": 5,
+              "n": 104
+            },
+            "refusal": 0.0
+          }
+        },
+        "data_exfiltration": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.12,
+              "lo": 0.0644,
+              "hi": 0.2126,
+              "k": 9,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.0317,
+              "lo": 0.0087,
+              "hi": 0.1086,
+              "k": 2,
+              "n": 63
+            },
+            "refusal": 0.0
+          }
+        },
+        "agent_hijacking": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.0,
+              "lo": 0.0,
+              "hi": 0.0487,
+              "k": 0,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.0769,
+              "lo": 0.0214,
+              "hi": 0.2414,
+              "k": 2,
+              "n": 26
+            },
+            "refusal": 0.0
+          }
+        }
+      }
+    },
+    "llm-baseline-disjoint": {
+      "static": {
+        "code_execution": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.56,
+              "lo": 0.4475,
+              "hi": 0.6667,
+              "k": 42,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "wild_verbatim": {
+            "wilson": {
+              "point": 0.0,
+              "lo": 0.0,
+              "hi": 0.4899,
+              "k": 0,
+              "n": 4
+            },
+            "refusal": 0.2
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.6635,
+              "lo": 0.5683,
+              "hi": 0.747,
+              "k": 69,
+              "n": 104
+            },
+            "refusal": 0.0
+          }
+        },
+        "data_exfiltration": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.5556,
+              "lo": 0.4409,
+              "hi": 0.6646,
+              "k": 40,
+              "n": 72
+            },
+            "refusal": 0.04
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.6774,
+              "lo": 0.5537,
+              "hi": 0.7805,
+              "k": 42,
+              "n": 62
+            },
+            "refusal": 0.0159
+          }
+        },
+        "agent_hijacking": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.4667,
+              "lo": 0.3582,
+              "hi": 0.5784,
+              "k": 35,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.619,
+              "lo": 0.4088,
+              "hi": 0.7925,
+              "k": 13,
+              "n": 21
+            },
+            "refusal": 0.1923
+          }
+        }
+      }
+    },
+    "llm-baseline": {
+      "static": {
+        "code_execution": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.2533,
+              "lo": 0.1686,
+              "hi": 0.3621,
+              "k": 19,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "wild_verbatim": {
+            "wilson": {
+              "point": 0.0,
+              "lo": 0.0,
+              "hi": 0.4345,
+              "k": 0,
+              "n": 5
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.6058,
+              "lo": 0.5097,
+              "hi": 0.6943,
+              "k": 63,
+              "n": 104
+            },
+            "refusal": 0.0
+          }
+        },
+        "data_exfiltration": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.28,
+              "lo": 0.191,
+              "hi": 0.3904,
+              "k": 21,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.5714,
+              "lo": 0.4486,
+              "hi": 0.686,
+              "k": 36,
+              "n": 63
+            },
+            "refusal": 0.0
+          }
+        },
+        "agent_hijacking": {
+          "synthetic_novel": {
+            "wilson": {
+              "point": 0.3333,
+              "lo": 0.2371,
+              "hi": 0.4458,
+              "k": 25,
+              "n": 75
+            },
+            "refusal": 0.0
+          },
+          "organic_authored": {
+            "wilson": {
+              "point": 0.5769,
+              "lo": 0.3895,
+              "hi": 0.7446,
+              "k": 15,
+              "n": 26
+            },
+            "refusal": 0.0
+          }
+        }
+      }
+    }
+  },
+  "wild_recall": {
+    "skillspector": {
+      "static": {
+        "wilson": {
+          "point": 0.4,
+          "lo": 0.1176,
+          "hi": 0.7693,
+          "k": 2,
+          "n": 5
+        }
+      }
+    },
+    "cisco-skill-scanner": {
+      "static": {
+        "wilson": {
+          "point": 0.25,
+          "lo": 0.0456,
+          "hi": 0.6994,
+          "k": 1,
+          "n": 4
+        }
+      }
+    },
+    "snyk-agent-scan": {
+      "static": {
+        "wilson": {
+          "point": 0.6,
+          "lo": 0.2307,
+          "hi": 0.8824,
+          "k": 3,
+          "n": 5
+        }
+      }
+    },
+    "llm-baseline": {
+      "static": {
+        "wilson": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.4345,
+          "k": 0,
+          "n": 5
+        }
+      }
+    },
+    "llm-baseline-disjoint": {
+      "static": {
+        "wilson": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.4899,
+          "k": 0,
+          "n": 4
+        }
+      }
+    }
+  },
+  "scanner_models": {
+    "cisco-skill-scanner": null,
+    "llm-baseline": "Qwen/Qwen2.5-72B-Instruct-AWQ",
+    "llm-baseline-disjoint": "microsoft/phi-4",
+    "skillspector": null,
+    "snyk-agent-scan": null
+  },
+  "scanner_type": {
+    "cisco-skill-scanner": "static-rules",
+    "llm-baseline": "llm-baseline-control",
+    "llm-baseline-disjoint": "llm-baseline-control",
+    "skillspector": "static-rules",
+    "snyk-agent-scan": "cloud-llm-product"
+  },
+  "scanner_family": {
+    "cisco-skill-scanner": null,
+    "llm-baseline": "qwen",
+    "llm-baseline-disjoint": "phi",
+    "skillspector": null,
+    "snyk-agent-scan": null
+  },
+  "false_positive": {
+    "skillspector": {
+      "static": {
+        "benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.031,
+            "k": 0,
+            "n": 120
+          }
+        },
+        "generated_benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0487,
+            "k": 0,
+            "n": 75
+          }
+        },
+        "dual_use": {
+          "wilson": {
+            "point": 0.2533,
+            "lo": 0.2074,
+            "hi": 0.3055,
+            "k": 76,
+            "n": 300
+          }
+        }
+      }
+    },
+    "cisco-skill-scanner": {
+      "static": {
+        "benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0318,
+            "k": 0,
+            "n": 117
+          }
+        },
+        "generated_benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.055,
+            "k": 0,
+            "n": 66
+          }
+        },
+        "dual_use": {
+          "wilson": {
+            "point": 0.085,
+            "lo": 0.0583,
+            "hi": 0.1225,
+            "k": 25,
+            "n": 294
+          }
+        }
+      }
+    },
+    "snyk-agent-scan": {
+      "static": {
+        "benign": {
+          "wilson": {
+            "point": 0.15,
+            "lo": 0.097,
+            "hi": 0.2247,
+            "k": 18,
+            "n": 120
+          }
+        },
+        "generated_benign": {
+          "wilson": {
+            "point": 0.1867,
+            "lo": 0.1146,
+            "hi": 0.2893,
+            "k": 14,
+            "n": 75
+          }
+        },
+        "dual_use": {
+          "wilson": {
+            "point": 0.34,
+            "lo": 0.2887,
+            "hi": 0.3953,
+            "k": 102,
+            "n": 300
+          }
+        }
+      }
+    },
+    "llm-baseline": {
+      "static": {
+        "benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0313,
+            "k": 0,
+            "n": 119
+          }
+        },
+        "generated_benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0487,
+            "k": 0,
+            "n": 75
+          }
+        },
+        "dual_use": {
+          "wilson": {
+            "point": 0.0067,
+            "lo": 0.0018,
+            "hi": 0.024,
+            "k": 2,
+            "n": 300
+          }
+        }
+      }
+    },
+    "llm-baseline-disjoint": {
+      "static": {
+        "benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0318,
+            "k": 0,
+            "n": 117
+          }
+        },
+        "generated_benign": {
+          "wilson": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0487,
+            "k": 0,
+            "n": 75
+          }
+        },
+        "dual_use": {
+          "wilson": {
+            "point": 0.0272,
+            "lo": 0.0139,
+            "hi": 0.0528,
+            "k": 8,
+            "n": 294
+          }
+        }
+      }
+    }
+  },
+  "generalization_gap": {
+    "cisco-skill-scanner": {
+      "static": {
+        "agent_hijacking": {
+          "recall_known": {
+            "point": 0.16,
+            "lo": 0.064,
+            "hi": 0.3465,
+            "k": 4,
+            "n": 25
+          },
+          "recall_synthetic": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0566,
+            "k": 0,
+            "n": 64
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0566,
+            "k": 0,
+            "n": 64
+          },
+          "recall_synthetic_balanced": 0.0,
+          "generator_spread": 0.0,
+          "gap_ci": {
+            "diff": 0.16,
+            "lo": 0.0486,
+            "hi": 0.3465,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": 0.16,
+            "lo": 0.0486,
+            "hi": 0.3465,
+            "significant": true
+          },
+          "p_value": 0.001059,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0566,
+            "k": 0,
+            "n": 64
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.16,
+            "lo": 0.0486,
+            "hi": 0.3465,
+            "significant": true
+          },
+          "significant_fdr": true
+        },
+        "code_execution": {
+          "recall_known": {
+            "point": 0.0467,
+            "lo": 0.0201,
+            "hi": 0.1048,
+            "k": 5,
+            "n": 107
+          },
+          "recall_synthetic": {
+            "point": 0.1493,
+            "lo": 0.0831,
+            "hi": 0.2534,
+            "k": 10,
+            "n": 67
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.1493,
+            "lo": 0.0831,
+            "hi": 0.2534,
+            "k": 10,
+            "n": 67
+          },
+          "recall_synthetic_balanced": 0.161,
+          "generator_spread": 0.4444,
+          "gap_ci": {
+            "diff": -0.1025,
+            "lo": -0.21,
+            "hi": -0.0145,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": -0.1025,
+            "lo": -0.21,
+            "hi": -0.0145,
+            "significant": true
+          },
+          "p_value": 0.019042,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.1493,
+            "lo": 0.0831,
+            "hi": 0.2534,
+            "k": 10,
+            "n": 67
+          },
+          "gap_ci_crossfamily": {
+            "diff": -0.1025,
+            "lo": -0.21,
+            "hi": -0.0145,
+            "significant": true
+          },
+          "significant_fdr": true
+        },
+        "data_exfiltration": {
+          "recall_known": {
+            "point": 0.0476,
+            "lo": 0.0163,
+            "hi": 0.1309,
+            "k": 3,
+            "n": 63
+          },
+          "recall_synthetic": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.055,
+            "k": 0,
+            "n": 66
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.055,
+            "k": 0,
+            "n": 66
+          },
+          "recall_synthetic_balanced": 0.0,
+          "generator_spread": 0.0,
+          "gap_ci": {
+            "diff": 0.0476,
+            "lo": -0.0157,
+            "hi": 0.1309,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": 0.0476,
+            "lo": -0.0157,
+            "hi": 0.1309,
+            "significant": false
+          },
+          "p_value": 0.072846,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.055,
+            "k": 0,
+            "n": 66
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.0476,
+            "lo": -0.0157,
+            "hi": 0.1309,
+            "significant": false
+          },
+          "significant_fdr": false
+        }
+      }
+    },
+    "llm-baseline": {
+      "static": {
+        "agent_hijacking": {
+          "recall_known": {
+            "point": 0.5769,
+            "lo": 0.3895,
+            "hi": 0.7446,
+            "k": 15,
+            "n": 26
+          },
+          "recall_synthetic": {
+            "point": 0.3387,
+            "lo": 0.2334,
+            "hi": 0.4628,
+            "k": 21,
+            "n": 62
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.3333,
+            "lo": 0.2371,
+            "hi": 0.4458,
+            "k": 25,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.3441,
+          "generator_spread": 0.6786,
+          "gap_ci": {
+            "diff": 0.2382,
+            "lo": 0.0134,
+            "hi": 0.4362,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": 0.2436,
+            "lo": 0.025,
+            "hi": 0.4369,
+            "significant": true
+          },
+          "p_value": 0.038111,
+          "scanner_family": "qwen",
+          "samefamily_excluded": "qwen",
+          "recall_synthetic_crossfamily": {
+            "point": 0.3387,
+            "lo": 0.2334,
+            "hi": 0.4628,
+            "k": 21,
+            "n": 62
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.2382,
+            "lo": 0.0134,
+            "hi": 0.4362,
+            "significant": true
+          },
+          "significant_fdr": false
+        },
+        "code_execution": {
+          "recall_known": {
+            "point": 0.578,
+            "lo": 0.4842,
+            "hi": 0.6665,
+            "k": 63,
+            "n": 109
+          },
+          "recall_synthetic": {
+            "point": 0.3115,
+            "lo": 0.2094,
+            "hi": 0.4359,
+            "k": 19,
+            "n": 61
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.2533,
+            "lo": 0.1686,
+            "hi": 0.3621,
+            "k": 19,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.2572,
+          "generator_spread": 0.6429,
+          "gap_ci": {
+            "diff": 0.2665,
+            "lo": 0.1107,
+            "hi": 0.4016,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": 0.3246,
+            "lo": 0.181,
+            "hi": 0.4472,
+            "significant": true
+          },
+          "p_value": 0.000851,
+          "scanner_family": "qwen",
+          "samefamily_excluded": "qwen",
+          "recall_synthetic_crossfamily": {
+            "point": 0.3115,
+            "lo": 0.2094,
+            "hi": 0.4359,
+            "k": 19,
+            "n": 61
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.2665,
+            "lo": 0.1107,
+            "hi": 0.4016,
+            "significant": true
+          },
+          "significant_fdr": true
+        },
+        "data_exfiltration": {
+          "recall_known": {
+            "point": 0.5714,
+            "lo": 0.4486,
+            "hi": 0.686,
+            "k": 36,
+            "n": 63
+          },
+          "recall_synthetic": {
+            "point": 0.3065,
+            "lo": 0.2058,
+            "hi": 0.4297,
+            "k": 19,
+            "n": 62
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.28,
+            "lo": 0.191,
+            "hi": 0.3904,
+            "k": 21,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.2692,
+          "generator_spread": 0.5385,
+          "gap_ci": {
+            "diff": 0.265,
+            "lo": 0.091,
+            "hi": 0.4175,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": 0.2914,
+            "lo": 0.1263,
+            "hi": 0.4365,
+            "significant": true
+          },
+          "p_value": 0.002845,
+          "scanner_family": "qwen",
+          "samefamily_excluded": "qwen",
+          "recall_synthetic_crossfamily": {
+            "point": 0.3065,
+            "lo": 0.2058,
+            "hi": 0.4297,
+            "k": 19,
+            "n": 62
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.265,
+            "lo": 0.091,
+            "hi": 0.4175,
+            "significant": true
+          },
+          "significant_fdr": true
+        }
+      }
+    },
+    "llm-baseline-disjoint": {
+      "static": {
+        "agent_hijacking": {
+          "recall_known": {
+            "point": 0.619,
+            "lo": 0.4088,
+            "hi": 0.7925,
+            "k": 13,
+            "n": 21
+          },
+          "recall_synthetic": {
+            "point": 0.4667,
+            "lo": 0.3582,
+            "hi": 0.5784,
+            "k": 35,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.4667,
+            "lo": 0.3582,
+            "hi": 0.5784,
+            "k": 35,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.4784,
+          "generator_spread": 0.6905,
+          "gap_ci": {
+            "diff": 0.1524,
+            "lo": -0.0857,
+            "hi": 0.357,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": 0.1524,
+            "lo": -0.0857,
+            "hi": 0.357,
+            "significant": false
+          },
+          "p_value": 0.217044,
+          "scanner_family": "phi",
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.4667,
+            "lo": 0.3582,
+            "hi": 0.5784,
+            "k": 35,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.1524,
+            "lo": -0.0857,
+            "hi": 0.357,
+            "significant": false
+          },
+          "significant_fdr": false
+        },
+        "code_execution": {
+          "recall_known": {
+            "point": 0.6389,
+            "lo": 0.545,
+            "hi": 0.7233,
+            "k": 69,
+            "n": 108
+          },
+          "recall_synthetic": {
+            "point": 0.56,
+            "lo": 0.4475,
+            "hi": 0.6667,
+            "k": 42,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.56,
+            "lo": 0.4475,
+            "hi": 0.6667,
+            "k": 42,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.5775,
+          "generator_spread": 0.8571,
+          "gap_ci": {
+            "diff": 0.0789,
+            "lo": -0.0632,
+            "hi": 0.2195,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": 0.0789,
+            "lo": -0.0632,
+            "hi": 0.2195,
+            "significant": false
+          },
+          "p_value": 0.282654,
+          "scanner_family": "phi",
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.56,
+            "lo": 0.4475,
+            "hi": 0.6667,
+            "k": 42,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.0789,
+            "lo": -0.0632,
+            "hi": 0.2195,
+            "significant": false
+          },
+          "significant_fdr": false
+        },
+        "data_exfiltration": {
+          "recall_known": {
+            "point": 0.6774,
+            "lo": 0.5537,
+            "hi": 0.7805,
+            "k": 42,
+            "n": 62
+          },
+          "recall_synthetic": {
+            "point": 0.5556,
+            "lo": 0.4409,
+            "hi": 0.6646,
+            "k": 40,
+            "n": 72
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.5556,
+            "lo": 0.4409,
+            "hi": 0.6646,
+            "k": 40,
+            "n": 72
+          },
+          "recall_synthetic_balanced": 0.5128,
+          "generator_spread": 1.0,
+          "gap_ci": {
+            "diff": 0.1219,
+            "lo": -0.0431,
+            "hi": 0.276,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": 0.1219,
+            "lo": -0.0431,
+            "hi": 0.276,
+            "significant": false
+          },
+          "p_value": 0.148914,
+          "scanner_family": "phi",
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.5556,
+            "lo": 0.4409,
+            "hi": 0.6646,
+            "k": 40,
+            "n": 72
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.1219,
+            "lo": -0.0431,
+            "hi": 0.276,
+            "significant": false
+          },
+          "significant_fdr": false
+        }
+      }
+    },
+    "skillspector": {
+      "static": {
+        "agent_hijacking": {
+          "recall_known": {
+            "point": 0.0769,
+            "lo": 0.0214,
+            "hi": 0.2414,
+            "k": 2,
+            "n": 26
+          },
+          "recall_synthetic": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0487,
+            "k": 0,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0487,
+            "k": 0,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.0,
+          "generator_spread": 0.0,
+          "gap_ci": {
+            "diff": 0.0769,
+            "lo": 0.0031,
+            "hi": 0.2414,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": 0.0769,
+            "lo": 0.0031,
+            "hi": 0.2414,
+            "significant": true
+          },
+          "p_value": 0.015264,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0487,
+            "k": 0,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.0769,
+            "lo": 0.0031,
+            "hi": 0.2414,
+            "significant": true
+          },
+          "significant_fdr": true
+        },
+        "code_execution": {
+          "recall_known": {
+            "point": 0.0642,
+            "lo": 0.0315,
+            "hi": 0.1267,
+            "k": 7,
+            "n": 109
+          },
+          "recall_synthetic": {
+            "point": 0.08,
+            "lo": 0.0372,
+            "hi": 0.1637,
+            "k": 6,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.08,
+            "lo": 0.0372,
+            "hi": 0.1637,
+            "k": 6,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.0987,
+          "generator_spread": 0.3333,
+          "gap_ci": {
+            "diff": -0.0158,
+            "lo": -0.1056,
+            "hi": 0.06,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": -0.0158,
+            "lo": -0.1056,
+            "hi": 0.06,
+            "significant": false
+          },
+          "p_value": 0.681459,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.08,
+            "lo": 0.0372,
+            "hi": 0.1637,
+            "k": 6,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": -0.0158,
+            "lo": -0.1056,
+            "hi": 0.06,
+            "significant": false
+          },
+          "significant_fdr": false
+        },
+        "data_exfiltration": {
+          "recall_known": {
+            "point": 0.0317,
+            "lo": 0.0087,
+            "hi": 0.1086,
+            "k": 2,
+            "n": 63
+          },
+          "recall_synthetic": {
+            "point": 0.12,
+            "lo": 0.0644,
+            "hi": 0.2126,
+            "k": 9,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.12,
+            "lo": 0.0644,
+            "hi": 0.2126,
+            "k": 9,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.1269,
+          "generator_spread": 0.3,
+          "gap_ci": {
+            "diff": -0.0883,
+            "lo": -0.1837,
+            "hi": 0.0066,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": -0.0883,
+            "lo": -0.1837,
+            "hi": 0.0066,
+            "significant": false
+          },
+          "p_value": 0.056563,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.12,
+            "lo": 0.0644,
+            "hi": 0.2126,
+            "k": 9,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": -0.0883,
+            "lo": -0.1837,
+            "hi": 0.0066,
+            "significant": false
+          },
+          "significant_fdr": false
+        }
+      }
+    },
+    "snyk-agent-scan": {
+      "static": {
+        "agent_hijacking": {
+          "recall_known": {
+            "point": 0.7308,
+            "lo": 0.5392,
+            "hi": 0.863,
+            "k": 19,
+            "n": 26
+          },
+          "recall_synthetic": {
+            "point": 0.72,
+            "lo": 0.6096,
+            "hi": 0.809,
+            "k": 54,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.72,
+            "lo": 0.6096,
+            "hi": 0.809,
+            "k": 54,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.7164,
+          "generator_spread": 0.4615,
+          "gap_ci": {
+            "diff": 0.0108,
+            "lo": -0.2005,
+            "hi": 0.183,
+            "significant": false
+          },
+          "gap_ci_pooled": {
+            "diff": 0.0108,
+            "lo": -0.2005,
+            "hi": 0.183,
+            "significant": false
+          },
+          "p_value": 0.915811,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.72,
+            "lo": 0.6096,
+            "hi": 0.809,
+            "k": 54,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": 0.0108,
+            "lo": -0.2005,
+            "hi": 0.183,
+            "significant": false
+          },
+          "significant_fdr": false
+        },
+        "code_execution": {
+          "recall_known": {
+            "point": 0.7248,
+            "lo": 0.6344,
+            "hi": 0.7999,
+            "k": 79,
+            "n": 109
+          },
+          "recall_synthetic": {
+            "point": 0.88,
+            "lo": 0.7874,
+            "hi": 0.9356,
+            "k": 66,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.88,
+            "lo": 0.7874,
+            "hi": 0.9356,
+            "k": 66,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.8901,
+          "generator_spread": 0.2308,
+          "gap_ci": {
+            "diff": -0.1552,
+            "lo": -0.2613,
+            "hi": -0.036,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": -0.1552,
+            "lo": -0.2613,
+            "hi": -0.036,
+            "significant": true
+          },
+          "p_value": 0.011351,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.88,
+            "lo": 0.7874,
+            "hi": 0.9356,
+            "k": 66,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": -0.1552,
+            "lo": -0.2613,
+            "hi": -0.036,
+            "significant": true
+          },
+          "significant_fdr": true
+        },
+        "data_exfiltration": {
+          "recall_known": {
+            "point": 0.6984,
+            "lo": 0.5764,
+            "hi": 0.7976,
+            "k": 44,
+            "n": 63
+          },
+          "recall_synthetic": {
+            "point": 0.84,
+            "lo": 0.7408,
+            "hi": 0.906,
+            "k": 63,
+            "n": 75
+          },
+          "recall_synthetic_pooled": {
+            "point": 0.84,
+            "lo": 0.7408,
+            "hi": 0.906,
+            "k": 63,
+            "n": 75
+          },
+          "recall_synthetic_balanced": 0.8462,
+          "generator_spread": 0.3077,
+          "gap_ci": {
+            "diff": -0.1416,
+            "lo": -0.2803,
+            "hi": -0.0013,
+            "significant": true
+          },
+          "gap_ci_pooled": {
+            "diff": -0.1416,
+            "lo": -0.2803,
+            "hi": -0.0013,
+            "significant": true
+          },
+          "p_value": 0.047128,
+          "scanner_family": null,
+          "samefamily_excluded": null,
+          "recall_synthetic_crossfamily": {
+            "point": 0.84,
+            "lo": 0.7408,
+            "hi": 0.906,
+            "k": 63,
+            "n": 75
+          },
+          "gap_ci_crossfamily": {
+            "diff": -0.1416,
+            "lo": -0.2803,
+            "hi": -0.0013,
+            "significant": true
+          },
+          "significant_fdr": false
+        }
+      }
+    }
+  },
+  "per_generator_recall": {
+    "snyk-agent-scan": {
+      "static": {
+        "mixtral-8x22b": {
+          "point": 0.7561,
+          "lo": 0.6066,
+          "hi": 0.8618,
+          "k": 31,
+          "n": 41
+        },
+        "llama-3.3-70b": {
+          "point": 0.7576,
+          "lo": 0.5898,
+          "hi": 0.8717,
+          "k": 25,
+          "n": 33
+        },
+        "gemma-2-27b": {
+          "point": 0.7692,
+          "lo": 0.6166,
+          "hi": 0.8735,
+          "k": 30,
+          "n": 39
+        },
+        "hermes-3-70b": {
+          "point": 0.7436,
+          "lo": 0.5892,
+          "hi": 0.8543,
+          "k": 29,
+          "n": 39
+        },
+        "qwen2.5-72b": {
+          "point": 0.95,
+          "lo": 0.835,
+          "hi": 0.9862,
+          "k": 38,
+          "n": 40
+        },
+        "deepseek-v3.1": {
+          "point": 0.9091,
+          "lo": 0.7643,
+          "hi": 0.9686,
+          "k": 30,
+          "n": 33
+        }
+      }
+    },
+    "cisco-skill-scanner": {
+      "static": {
+        "mixtral-8x22b": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0918,
+          "k": 0,
+          "n": 38
+        },
+        "llama-3.3-70b": {
+          "point": 0.1481,
+          "lo": 0.0592,
+          "hi": 0.3248,
+          "k": 4,
+          "n": 27
+        },
+        "hermes-3-70b": {
+          "point": 0.0667,
+          "lo": 0.0185,
+          "hi": 0.2132,
+          "k": 2,
+          "n": 30
+        },
+        "gemma-2-27b": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.1103,
+          "k": 0,
+          "n": 31
+        },
+        "qwen2.5-72b": {
+          "point": 0.0789,
+          "lo": 0.0272,
+          "hi": 0.208,
+          "k": 3,
+          "n": 38
+        },
+        "deepseek-v3.1": {
+          "point": 0.0303,
+          "lo": 0.0054,
+          "hi": 0.1532,
+          "k": 1,
+          "n": 33
+        }
+      }
+    },
+    "skillspector": {
+      "static": {
+        "gemma-2-27b": {
+          "point": 0.0256,
+          "lo": 0.0045,
+          "hi": 0.1318,
+          "k": 1,
+          "n": 39
+        },
+        "hermes-3-70b": {
+          "point": 0.0769,
+          "lo": 0.0265,
+          "hi": 0.2032,
+          "k": 3,
+          "n": 39
+        },
+        "mixtral-8x22b": {
+          "point": 0.0244,
+          "lo": 0.0043,
+          "hi": 0.126,
+          "k": 1,
+          "n": 41
+        },
+        "llama-3.3-70b": {
+          "point": 0.1515,
+          "lo": 0.0665,
+          "hi": 0.3092,
+          "k": 5,
+          "n": 33
+        },
+        "qwen2.5-72b": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0876,
+          "k": 0,
+          "n": 40
+        },
+        "deepseek-v3.1": {
+          "point": 0.1515,
+          "lo": 0.0665,
+          "hi": 0.3092,
+          "k": 5,
+          "n": 33
+        }
+      }
+    },
+    "llm-baseline-disjoint": {
+      "static": {
+        "llama-3.3-70b": {
+          "point": 0.8788,
+          "lo": 0.7267,
+          "hi": 0.9518,
+          "k": 29,
+          "n": 33
+        },
+        "gemma-2-27b": {
+          "point": 0.9231,
+          "lo": 0.7968,
+          "hi": 0.9735,
+          "k": 36,
+          "n": 39
+        },
+        "mixtral-8x22b": {
+          "point": 0.1,
+          "lo": 0.0396,
+          "hi": 0.2305,
+          "k": 4,
+          "n": 40
+        },
+        "hermes-3-70b": {
+          "point": 0.7179,
+          "lo": 0.5622,
+          "hi": 0.8346,
+          "k": 28,
+          "n": 39
+        },
+        "qwen2.5-72b": {
+          "point": 0.375,
+          "lo": 0.2422,
+          "hi": 0.5297,
+          "k": 15,
+          "n": 40
+        },
+        "deepseek-v3.1": {
+          "point": 0.1613,
+          "lo": 0.0709,
+          "hi": 0.3263,
+          "k": 5,
+          "n": 31
+        }
+      }
+    },
+    "llm-baseline": {
+      "static": {
+        "llama-3.3-70b": {
+          "point": 0.4545,
+          "lo": 0.2984,
+          "hi": 0.6201,
+          "k": 15,
+          "n": 33
+        },
+        "gemma-2-27b": {
+          "point": 0.641,
+          "lo": 0.4842,
+          "hi": 0.7726,
+          "k": 25,
+          "n": 39
+        },
+        "mixtral-8x22b": {
+          "point": 0.0488,
+          "lo": 0.0135,
+          "hi": 0.1614,
+          "k": 2,
+          "n": 41
+        },
+        "hermes-3-70b": {
+          "point": 0.359,
+          "lo": 0.2274,
+          "hi": 0.5158,
+          "k": 14,
+          "n": 39
+        },
+        "qwen2.5-72b": {
+          "point": 0.15,
+          "lo": 0.0706,
+          "hi": 0.2907,
+          "k": 6,
+          "n": 40
+        },
+        "deepseek-v3.1": {
+          "point": 0.0909,
+          "lo": 0.0314,
+          "hi": 0.2357,
+          "k": 3,
+          "n": 33
+        }
+      }
+    }
+  },
+  "mcnemar_static_vs_llm": {},
+  "consensus": {
+    "n": 423,
+    "full_consensus_rate": 0.0118
+  },
+  "fdr": {
+    "q": 0.05,
+    "n_comparisons": 15,
+    "n_significant": 6
+  },
+  "k": 1,
+  "stochastic_stability": {}
+}

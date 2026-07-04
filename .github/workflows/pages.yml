@@ -3,10 +3,8 @@ name: deploy-pages
 # (Pages serves on the free plan only for PUBLIC repos — activates when the repo is flipped
 #  public at launch; the domain is pointed then.)
 on:
-  # PRE-LAUNCH PREVIEW PHASE: the repo is private and the site is served from Cloudflare Pages
-  # (unguessable URL, noindex) via `ops/deploy_preview.sh` — GitHub Pages can't serve a private free
-  # repo, so the push auto-deploy is disabled here. RE-ENABLE AT LAUNCH (flip repo public + restore
-  # `push: branches:[main]`). Manual trigger kept for when the repo is public again.
+  push:
+    branches: [main]
   workflow_dispatch: {}
 
 permissions:

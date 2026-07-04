@@ -330,8 +330,9 @@ FOOT = (
     "scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an "
     "example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from "
     'anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">'
-    "github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script>" + JS
-    + "</script></body></html>"
+    "github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div>"
+    # external same-origin file, not inline: the production CSP is script-src 'self'
+    '<script src="assets/site.js" defer></script></body></html>'
 )
 
 
@@ -1815,6 +1816,9 @@ def main(argv=None):
         "/*\n  Cache-Control: no-cache, max-age=0, must-revalidate\n"
     )
     board = json.load(open(os.path.join(HERE, args.board), encoding="utf-8"))
+    # sort/filter JS ships as a same-origin file so it runs under CSP script-src 'self'
+    os.makedirs(os.path.join(DOCS, "assets"), exist_ok=True)
+    open(os.path.join(DOCS, "assets", "site.js"), "w").write(JS)
 
     def write(name, html):
         open(os.path.join(DOCS, name), "w").write(_linkify_arxiv(html))

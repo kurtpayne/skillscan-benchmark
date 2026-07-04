@@ -313,47 +313,4 @@ hr{border:0;border-top:1px solid var(--line);margin:1.4em 0}
 <li><strong>Dynamic Malicious Skills in Agentic AI</strong> (<a href="https://arxiv.org/abs/2606.16287">arXiv:2606.16287</a>, June 2026; Chen et al.) — shows an attacker can embed natural-language instructions in a skill&#x27;s <em>documentation</em> that induce the agent to <strong>inject malicious logic into an otherwise-benign skill at execution time</strong> (demonstrated on OpenHands and Claude Code), and proposes an OS <strong>kernel-enforced read-only mount</strong> as mitigation. This is the sharpest external case for our conclusion: the skill is <strong>benign at read time</strong>, so no read-time scanner — static or LLM — can catch it; the defense has to live at execution. It is concrete prior art for the &quot;move the boundary closer to execution&quot; direction we point to (see <em>Where this leaves us</em>).</li>
 <li><strong>SkillGuard</strong> (<a href="https://arxiv.org/abs/2606.03024">arXiv:2606.03024</a>, June 2026; Pan et al.) — a skill-centric <strong>permission framework</strong> (capability inference, runtime access control, user-mediated authorization, deny-by-default, behavior monitoring). Concrete prior art for another item on that same &quot;move the boundary closer to execution&quot; list — runtime permissioning rather than read-time inspection.</li>
 </ul>
-<p>Pointers to other prior art are welcome (corrections policy, §7).</p><footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script>
-document.addEventListener('DOMContentLoaded',function(){
-  // ---- master table: sort (desktop rows + mobile cards in lockstep) ----
-  var deskBody=document.querySelector('#m-desk tbody');
-  var cardWrap=document.querySelector('#m-cards');
-  var sortState={key:null,dir:-1};
-  function reorder(key){
-    if(sortState.key===key){sortState.dir=-sortState.dir;}else{sortState.key=key;sortState.dir=-1;}
-    var dir=sortState.dir;
-    function val(el){var v=parseFloat(el.getAttribute('data-'+key));return isNaN(v)?-1:v;}
-    if(deskBody){
-      Array.from(deskBody.querySelectorAll('tr'))
-        .sort(function(a,b){return (val(a)-val(b))*dir;})
-        .forEach(function(r){deskBody.appendChild(r);});
-    }
-    if(cardWrap){
-      Array.from(cardWrap.querySelectorAll('.mcard'))
-        .sort(function(a,b){return (val(a)-val(b))*dir;})
-        .forEach(function(r){cardWrap.appendChild(r);});
-    }
-    document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
-      th.classList.toggle('active', th.dataset.sort===key);
-    });
-  }
-  document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
-    th.addEventListener('click',function(){reorder(th.dataset.sort);});
-  });
-  // ---- class filter chips (hide/show rows + cards) ----
-  var active={};
-  document.querySelectorAll('.chip[data-c]').forEach(function(c){active[c.dataset.c]=true;});
-  function applyFilter(){
-    document.querySelectorAll('#m-desk tbody tr, #m-cards .mcard').forEach(function(el){
-      el.style.display = active[el.dataset.cls]===false ? 'none' : '';
-    });
-  }
-  document.querySelectorAll('.chip[data-c]').forEach(function(c){
-    c.addEventListener('click',function(){
-      active[c.dataset.c]=!active[c.dataset.c];
-      c.classList.toggle('off',!active[c.dataset.c]);
-      applyFilter();
-    });
-  });
-});
-</script></body></html>
+<p>Pointers to other prior art are welcome (corrections policy, §7).</p><footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script src="assets/site.js" defer></script></body></html>

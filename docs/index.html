@@ -364,47 +364,4 @@ hr{border:0;border-top:1px solid var(--line);margin:1.4em 0}
 </div></details>
 <p class="muted"><strong>Cross-scanner consensus (SkillSpector + Cisco):</strong> full agreement on only 3.4% of 467 malicious samples — the subset (of 507 total malicious incl. the 84 independent) on which <em>both</em> returned a non-error verdict (40 are excluded because one scanner errored/declined, per §5). We compute consensus over the two <em>discriminating</em> static scanners only; SkillGate is excluded because it blocks ~everything, so it would trivially "agree" and inflate the number. Since SkillSpector and Cisco both barely fire, low agreement is partly mechanical: read it as "they rarely co-fire," not deep semantic disagreement.</p></details>
 <details><summary>Quick glossary</summary><p><strong>recall</strong> = how many real attacks a scanner catches · <strong>known vs novel</strong> = attacks already documented vs disguised/never-seen (novel is the real test) · <strong>false-positive</strong> = safe tools it wrongly flags · <strong>dual-use</strong> = legitimate-but-scary skills (e.g. a real auth tool that reads a token) · <strong>static rules</strong> = pattern-matching, the cheap/private bet · <strong>+llm / cloud</strong> = sending the file to a model · <strong>refusal</strong> = the scanner errored or declined instead of giving a verdict · <strong>balance</strong> = balanced accuracy, 0.5 = coin-flip.</p></details>
-<footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script>
-document.addEventListener('DOMContentLoaded',function(){
-  // ---- master table: sort (desktop rows + mobile cards in lockstep) ----
-  var deskBody=document.querySelector('#m-desk tbody');
-  var cardWrap=document.querySelector('#m-cards');
-  var sortState={key:null,dir:-1};
-  function reorder(key){
-    if(sortState.key===key){sortState.dir=-sortState.dir;}else{sortState.key=key;sortState.dir=-1;}
-    var dir=sortState.dir;
-    function val(el){var v=parseFloat(el.getAttribute('data-'+key));return isNaN(v)?-1:v;}
-    if(deskBody){
-      Array.from(deskBody.querySelectorAll('tr'))
-        .sort(function(a,b){return (val(a)-val(b))*dir;})
-        .forEach(function(r){deskBody.appendChild(r);});
-    }
-    if(cardWrap){
-      Array.from(cardWrap.querySelectorAll('.mcard'))
-        .sort(function(a,b){return (val(a)-val(b))*dir;})
-        .forEach(function(r){cardWrap.appendChild(r);});
-    }
-    document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
-      th.classList.toggle('active', th.dataset.sort===key);
-    });
-  }
-  document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
-    th.addEventListener('click',function(){reorder(th.dataset.sort);});
-  });
-  // ---- class filter chips (hide/show rows + cards) ----
-  var active={};
-  document.querySelectorAll('.chip[data-c]').forEach(function(c){active[c.dataset.c]=true;});
-  function applyFilter(){
-    document.querySelectorAll('#m-desk tbody tr, #m-cards .mcard').forEach(function(el){
-      el.style.display = active[el.dataset.cls]===false ? 'none' : '';
-    });
-  }
-  document.querySelectorAll('.chip[data-c]').forEach(function(c){
-    c.addEventListener('click',function(){
-      active[c.dataset.c]=!active[c.dataset.c];
-      c.classList.toggle('off',!active[c.dataset.c]);
-      applyFilter();
-    });
-  });
-});
-</script></body></html>
+<footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script src="assets/site.js" defer></script></body></html>

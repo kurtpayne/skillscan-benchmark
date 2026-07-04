@@ -211,47 +211,4 @@ hr{border:0;border-top:1px solid var(--line);margin:1.4em 0}
 <p>This isn&#x27;t &quot;give up&quot; — it&#x27;s &quot;stop looking here.&quot; The one thing that works isn&#x27;t a control you can <em>own</em>: you transmit every skill to a third-party commercial API, pay per scan forever, depend on a model that can be deprecated or repriced, get verdicts whose reproducibility the provider controls, and can&#x27;t independently own, pin, or audit it the way you could a local artifact.</p>
 <p>The ceiling isn&#x27;t an implementation bug — it follows from the information available at read time: a scanner sees text and code, not future intent, runtime context, network behavior, or credential use, so it can&#x27;t reliably tell a benignly-used capability from a maliciously-used one.</p>
 <p>So read-time review should be a <strong>linting and triage layer, not the security boundary</strong>. The boundary needs to move closer to execution — capability isolation, runtime permissioning, provenance / signed identity, behavioral monitoring, constrained tool APIs. That&#x27;s a direction the data motivates, not a finding this board measures — but it&#x27;s where I&#x27;d look next.</p>
-<p>Built solo and independent. Spot a factual or method error? Corrections welcome from anyone.</p><footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script>
-document.addEventListener('DOMContentLoaded',function(){
-  // ---- master table: sort (desktop rows + mobile cards in lockstep) ----
-  var deskBody=document.querySelector('#m-desk tbody');
-  var cardWrap=document.querySelector('#m-cards');
-  var sortState={key:null,dir:-1};
-  function reorder(key){
-    if(sortState.key===key){sortState.dir=-sortState.dir;}else{sortState.key=key;sortState.dir=-1;}
-    var dir=sortState.dir;
-    function val(el){var v=parseFloat(el.getAttribute('data-'+key));return isNaN(v)?-1:v;}
-    if(deskBody){
-      Array.from(deskBody.querySelectorAll('tr'))
-        .sort(function(a,b){return (val(a)-val(b))*dir;})
-        .forEach(function(r){deskBody.appendChild(r);});
-    }
-    if(cardWrap){
-      Array.from(cardWrap.querySelectorAll('.mcard'))
-        .sort(function(a,b){return (val(a)-val(b))*dir;})
-        .forEach(function(r){cardWrap.appendChild(r);});
-    }
-    document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
-      th.classList.toggle('active', th.dataset.sort===key);
-    });
-  }
-  document.querySelectorAll('#m-desk th.sortable').forEach(function(th){
-    th.addEventListener('click',function(){reorder(th.dataset.sort);});
-  });
-  // ---- class filter chips (hide/show rows + cards) ----
-  var active={};
-  document.querySelectorAll('.chip[data-c]').forEach(function(c){active[c.dataset.c]=true;});
-  function applyFilter(){
-    document.querySelectorAll('#m-desk tbody tr, #m-cards .mcard').forEach(function(el){
-      el.style.display = active[el.dataset.cls]===false ? 'none' : '';
-    });
-  }
-  document.querySelectorAll('.chip[data-c]').forEach(function(c){
-    c.addEventListener('click',function(){
-      active[c.dataset.c]=!active[c.dataset.c];
-      c.classList.toggle('off',!active[c.dataset.c]);
-      applyFilter();
-    });
-  });
-});
-</script></body></html>
+<p>Built solo and independent. Spot a factual or method error? Corrections welcome from anyone.</p><footer class="site"><p><strong>Not a certification.</strong> We grade <em>scanners</em>, not skills. Results describe specific pinned versions on a dated, directional corpus and may not generalise. No warranty; not security advice.</p><p>Scanner names are trademarks of their owners, used nominatively. No affiliation/endorsement. Full attributions + licenses: <a href="notices.html">Notices</a>. <strong>Vendor neutrality:</strong> no preferential treatment, no methodology accommodation or score negotiation; vendor responses may be published verbatim and never alter scoring.</p><p>Open <em>method</em>, not open-data: methodology + harness + aggregate results + an example corpus are public; the scoring corpus is private (anti-gaming). Corrections welcome from anyone. Source: <a href="https://github.com/kurtpayne/skillscan-benchmark">github.com/kurtpayne/skillscan-benchmark</a>. © 2026 skillscan.sh</p></footer></div><script src="assets/site.js" defer></script></body></html>
